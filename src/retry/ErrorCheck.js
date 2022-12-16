@@ -28,6 +28,16 @@ const ErrorCheck = {
     }
     return notInRange;
   },
+
+  hasMoving(moving) {
+    const notMoving = moving !== "U" && moving !== "D";
+    try {
+      if (notMoving) throw new Error("[ERROR] U 혹은 D를 입력해 주세요.");
+    } catch (error) {
+      Console.print(error.message);
+    }
+    return notMoving;
+  },
 };
 
 module.exports = ErrorCheck;
